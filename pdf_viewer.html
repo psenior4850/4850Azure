@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #003057;
+        }
+        iframe {
+            width: 95%;
+            height: 95%;
+            border: none;
+        }
+        p {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const filePath =  urlParams.get('file');
+        document.body.innerHTML = `<iframe src="${filePath}" title="PDF Viewer"></iframe>`;
+    </script>
+</body>
+</html>
